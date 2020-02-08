@@ -7,7 +7,7 @@ browser = None
 
 def check_shop(url, keywords):
     browser.get(url)
-    time.sleep(3)
+    time.sleep(5)
     find_flag = False
     for keyword in keywords:
         if keyword in browser.page_source:

@@ -21,6 +21,7 @@ pip install webdriver
 pip install pillow
 如果还有其他缺失 请根据提示 pip install 安装
 ```
-- 运行src下到watcher
-- 运行wechat_push
+- 运行src下的watcher.py
+- 运行wechat_push.py
 - 扫码登陆
+- 开始推送
