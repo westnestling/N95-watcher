@@ -25,7 +25,8 @@ def check_shop(url, keywords):
         fo.writelines(lines)
         fo.close()
         print("发现口罩有货!!"+url)
-        return
+        time.sleep(5)
+
 
 
 def check_all_shops():
