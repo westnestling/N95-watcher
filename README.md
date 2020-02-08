@@ -2,10 +2,10 @@
  🏷️监控京东、天猫、苏宁等商城口罩、消毒液、护目镜等物资有货信息，并推送微信提醒。抗击疫情！中国加油🇨🇳！
 
 # 加入已有推送群
-![](https://github.com/DaleyChao/N95-watcher/blob/master/img/pic.jpg)
+![](http://chuantu.xyz/t6/715/1581144544x1033347913.jpg)
 
 ## 加群失败 请关注以下二维码 获得最新消息
-![](https://github.com/DaleyChao/N95-watcher/blob/master/img/qrcode.jpg)
+![](http://chuantu.xyz/t6/715/1581144518x2728303411.jpg)
 
 ## 自行推送使用方式
 - 请自行安装python 3，如果已安装版本是python 2，推荐使用版本管理工具。
