@@ -4,6 +4,7 @@ from log.logger import logger as log
 
 browser = None
 
+
 def check_shop(url, keywords):
     browser.get(url)
     time.sleep(3)
