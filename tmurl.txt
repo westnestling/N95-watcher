@@ -8,3 +8,5 @@
 "https://detail.tmall.com/item.htm?id=528937646086",
 "https://detail.tmall.com/item.htm?id=563451626963",
 "https://detail.tmall.com/item.htm?id=612169223963",
+"https://detail.tmall.com/item.htm?id=611610597456",
+"https://detail.tmall.com/item.htm?id=563451626963",

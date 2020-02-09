@@ -111,7 +111,7 @@ if __name__ == '__main__':
     group = bot.groups().search(keywords='口罩消毒液放货监控群')[0]
     group2 = bot.groups().search(keywords='口罩消毒液监控群')[0]
     # url = "http://invoice.pinhai.com.cn:8090/index/maskloglist"
-    url = "http://101.133.238.56:8090/index/maskloglist"
+    url = "http://invoice.pinhai.com.cn/index/maskloglist"
     # 包装头部
     firefox_headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
     # 构建请求
@@ -142,13 +142,15 @@ if __name__ == '__main__':
                 print("读取data失败")
             finally:
                 file.close()
-            # !!!
+            # 注释开始
             request = Request(url, headers=firefox_headers)
             html = urlopen(request)
             data = html.read()
             strs = str(data, 'UTF-8')
             list = json.loads(strs)['data']['maskloglists']
             data_json = list[-1]
+            title = data_json["title"]
+
             if pre_time != data_json["ctime"] and data_json["title"] not in data_map:
                 print(data_json)
                 data_map[data_json["title"]] = data_json['url']
@@ -166,7 +168,11 @@ if __name__ == '__main__':
                 if find_flag is not False:
                     continue
                 # 发送微信信息
+                img_name = "imgs/" + time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+                browser.save_screenshot(img_name+ "B.png")
                 group2.send(data)
+                resize_image(img_name + "B.png", img_name + "B_copy.png")
+                group2.send_image(img_name + "B_copy.png", media_id=None)
                 # time.sleep(1)
                 group.send(data)
                 url_save = data_json['url']
