@@ -29,7 +29,7 @@ python3：https://www.python.org/downloads/
 - 安装所需依赖
 ```buildoutcfg
 pip install wxpy
-pip install webdriver
+pip install selenium
 pip install pillow
 如果还有其他缺失 请根据提示 pip install 安装
 ```
