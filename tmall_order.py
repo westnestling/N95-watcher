@@ -75,6 +75,7 @@ def buy(buy_time, mall):
             time.sleep(0.5)
 
 
+
 if __name__ == "__main__":
     # 输入要购买物品 url
     url = "https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.6.5db97de7nIagyn&id=560599203455&skuId=3737496318597&areaId=320500&user_id=2261244963&cat_id=2&is_b=1&rn=45b3402ed4736ad0cd8928eafe32d986"
@@ -83,4 +84,5 @@ if __name__ == "__main__":
     bt = "2019-02-09 22:00:00"
     login(url, mall)
     buy(bt, mall)
+    driver.quit()
 
