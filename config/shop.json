@@ -1,7 +1,7 @@
 [
   {
     "name": "jd",
-    "key_word": "无货,下柜,已下架,不支持销售,售完",
+    "key_word": "无货,已下柜,已下架,不支持销售,售完,缺货",
     "shop": [
       "https://item.jd.com/100005088337.html",
       "https://item.m.jd.com/product/65451413573.html",
@@ -418,7 +418,7 @@
   },
   {
     "name": "sn",
-    "key_word": "已下架,无货",
+    "key_word": "已下架,无货,无货,已下柜,已下架,不支持销售,售完,缺货",
     "shop": [
       "https://m.suning.com/product/10567806944.html",
       "https://m.suning.com/product/11623614289.html",
@@ -436,8 +436,9 @@
   },
   {
     "name": "tmall",
-    "key_word": "已下架,卖光",
+    "key_word": "已下架,卖光,无货,已下柜,已下架,不支持销售,售完,缺货",
     "shop": [
+      "https://chaoshi.detail.tmall.com/item.htm?id=612169223963 ",
       "https://detail.tmall.com/item.htm?id=594842356608",
       "https://detail.tmall.com/item.htm?id=537783105938",
       "https://detail.tmall.com/item.htm?id=579147322829",

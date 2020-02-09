@@ -1,11 +1,13 @@
 import os, time, json
 from selenium import webdriver
 from log.logger import logger as log
+from PIL import Image
 
 browser = None
 
 
 def check_shop(url, keywords):
+    global browser
     browser.get(url)
     time.sleep(5)
     find_flag = False
@@ -22,11 +24,14 @@ def check_shop(url, keywords):
         lines = fo.readlines()
         fo.close()
         fo = open("../data.txt", "w")
-        lines.append(time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())+" "+browser.title+" url："+url+"\n")
+        str_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
+        lines.append(str_time+" "+browser.title+" url："+url+"\n")
         fo.writelines(lines)
         fo.close()
         print("发现口罩有货!!"+url)
+        browser.save_screenshot("imgs/" + str_time + ".png")
         time.sleep(5)
+
 
 
 
@@ -40,8 +45,9 @@ def check_all_shops():
                 check_shop(shop, keywords)
 
 
+
 if __name__ == "__main__":
+    browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__), "chromedriver"))
     while True:
-        browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__), "chromedriver"))
         check_all_shops()
-        browser.quit()
+        # browser.quit()
