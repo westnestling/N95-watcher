@@ -1,4 +1,9 @@
+import sys
 import os, time, json
+
+lib_path = os.path.join(os.path.dirname(__file__))[:-3]
+sys.path.append(lib_path)
+
 from selenium import webdriver
 from log.logger import logger as log
 from PIL import Image
