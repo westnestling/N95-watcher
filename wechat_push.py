@@ -1,4 +1,6 @@
 import os
+import sys
+
 import tinify
 import json
 from urllib.request import Request, urlopen
@@ -105,6 +107,7 @@ def resize_image(infile, outfile='', x_s=1124):
 
 
 if __name__ == '__main__':
+    print(os.path.join(os.path.dirname(__file__)))
     browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__) + "/src", "chromedriver"))
     bot = Bot()
     # 修改群名
@@ -125,18 +128,20 @@ if __name__ == '__main__':
             file = open("data.txt")
             try:
                 for line in file:
-                    if line not in data_map:
+                    if line[21:50] not in data_map:
                         group2.send("发现有货!!!\n" + line)
                         # 压缩图片到500k以下
                         file_name = "src/imgs/"+line[:19]
                         try:
                             resize_image(file_name + ".png", file_name + "_copy.png")
-                            group2.send_image(file_name+"_copy.png", media_id=None)
                             group.send("发现有货!!!\n" + line)
+                            group2.send_image(file_name+"_copy.png", media_id=None)
+                            # group.send("发现有货!!!\n" + line)
                             group.send_image(file_name+"_copy.png", media_id=None)
                         except Exception:
+                            data_map[line[21:50]] = line[21:50]
                             continue
-                        data_map[line] = line
+                        data_map[line[21:50]] = line[21:50]
                 print("读取data.txt结束")
             except Exception:
                 print("读取data失败")
@@ -161,7 +166,7 @@ if __name__ == '__main__':
                 browser.get(data_json['url'])
                 time.sleep(3)
                 find_flag = False
-                for keyword in ['无货', '下柜', '已下架', '不支持销售', '售完', '卖光']:
+                for keyword in ['无货', '下柜', '已下架', '不支持销售', '售完', '卖光','京东(JD.COM)-正品低价']:
                     if keyword in browser.page_source:
                         find_flag = keyword
                         break
