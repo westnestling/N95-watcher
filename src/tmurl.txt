@@ -14,3 +14,6 @@
 "https://detail.tmall.com/item.htm?id=569492882306",
 "https://detail.tmall.com/item.htm?id=596143442666",
 "https://detail.tmall.com/item.htm?id=582357951467",
+"https://detail.tmall.com/item.htm?id=566831497212",
+"https://detail.tmall.com/item.htm?id=604035325011",
+"https://detail.tmall.com/item.htm?id=537464694779",
