@@ -25,10 +25,10 @@ def check_shop(url, keywords):
         log.warning(url)
         log.warning(keywords)
         #     "发现口罩有货!!",
-        fo = open("../data.txt", "r")
+        fo = open("data.txt", "r")
         lines = fo.readlines()
         fo.close()
-        fo = open("../data.txt", "w")
+        fo = open("data.txt", "w")
         str_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         lines.append(str_time+" "+browser.title+" url："+url+"\n")
         fo.writelines(lines)
@@ -41,7 +41,7 @@ def check_shop(url, keywords):
 
 
 def check_all_shops():
-    with open(os.path.join(os.path.dirname(__file__),"..","config","shop.json"), "r", encoding='UTF-8') as f:
+    with open(os.path.join(os.path.dirname(__file__),"config","shop.json"), "r", encoding='UTF-8') as f:
         infos = json.loads(f.read())
         for info in infos:
             for shop in info["shop"]:
@@ -51,8 +51,9 @@ def check_all_shops():
 
 
 
+# 加载 config/shop.json 中的商品，并检查有货状态，如果有货保存在 data.txt 中
 if __name__ == "__main__":
-    browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__), "chromedriver"))
+    browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__),"src", "chromedriver"))
     while True:
         check_all_shops()
         # browser.quit()

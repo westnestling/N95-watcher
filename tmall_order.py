@@ -1,6 +1,6 @@
 # python3.6.5
 # coding:utf-8
-# 天猫淘宝自动下单
+# 天猫淘宝自动下单 用于定时抢购
 import os
 from selenium import webdriver
 import datetime

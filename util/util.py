@@ -12,5 +12,6 @@ def readtm():
     file.close()
 
 
+# 将商品id批量 处理成 url
 if __name__ == '__main__':
     readjd()

@@ -41,10 +41,10 @@ def get_bot():
 
 def save_jd_url(url):
     try:
-        fo = open("jdurl.txt", "r")
+        fo = open("src/jdurl.txt", "r")
         lines = fo.readlines()
         fo.close()
-        fo = open("jdurl.txt", "w")
+        fo = open("src/jdurl.txt", "w")
         lines.append("\"" + url + "\",\n")
         fo.writelines(lines)
         fo.close()
@@ -54,10 +54,10 @@ def save_jd_url(url):
 
 def save_tm_url(url):
     try:
-        fo = open("tmurl.txt", "r")
+        fo = open("src/tmurl.txt", "r")
         lines = fo.readlines()
         fo.close()
-        fo = open("tmurl.txt", "w")
+        fo = open("src/tmurl.txt", "w")
         lines.append("\"" + url + "\",\n")
         fo.writelines(lines)
         fo.close()
@@ -94,18 +94,9 @@ def resize_image(infile, outfile='', x_s=1124):
     outfile = get_outfile(infile, outfile)
     out.save(outfile)
 
-#
-# if __name__ == '__main__':
-#         file = open("data.txt")
-#         for line in file:
-#             # 压缩图片到500k以下
-#             file_name = "src/imgs/" + line[:19]
-#             resize_image(file_name + ".png", file_name + "_copy.png")
-#             # group.send("发现有货!!!\n" + line)
-#         print("读取data.txt结束")
-#         file.close()
 
 
+# 推送data.txt中的数据 并且通过接口查询是否有货
 if __name__ == '__main__':
     print(os.path.join(os.path.dirname(__file__)))
     browser = webdriver.Chrome(os.path.join(os.path.dirname(__file__) + "/src", "chromedriver"))
@@ -113,7 +104,6 @@ if __name__ == '__main__':
     # 修改群名
     group = bot.groups().search(keywords='口罩消毒液放货监控群')[0]
     group2 = bot.groups().search(keywords='口罩消毒液监控群')[0]
-    # url = "http://invoice.pinhai.com.cn:8090/index/maskloglist"
     url = "http://invoice.pinhai.com.cn/index/maskloglist"
     # 包装头部
     firefox_headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1; WOW64; rv:23.0) Gecko/20100101 Firefox/23.0'}
@@ -125,6 +115,7 @@ if __name__ == '__main__':
         if (i + 1) % 5 == 0:
             print("已为您成功您监控" + str(i + 1) + "次")
         try:
+            # 读取data.txt中的数据并推送
             file = open("data.txt")
             try:
                 for line in file:
@@ -136,7 +127,6 @@ if __name__ == '__main__':
                             resize_image(file_name + ".png", file_name + "_copy.png")
                             group.send("发现有货!!!\n" + line)
                             group2.send_image(file_name+"_copy.png", media_id=None)
-                            # group.send("发现有货!!!\n" + line)
                             group.send_image(file_name+"_copy.png", media_id=None)
                         except Exception:
                             data_map[line[21:50]] = line[21:50]
