@@ -57,7 +57,7 @@ def buy(buy_time, mall):
     else:
         btn_buy = '#J_LinkBuy'
         btn_order = '#submitOrderPC_1 > div > a'
-    timeArray = time.strptime('2020-02-10 19:59:59', "%Y-%m-%d %H:%M:%S")
+    timeArray = time.strptime(buy_time, "%Y-%m-%d %H:%M:%S")
     # 转为时间戳
     timeStamp = int(time.mktime(timeArray))
     print(timeStamp)
@@ -65,7 +65,7 @@ def buy(buy_time, mall):
 
     while True:
         # 现在时间大于预设时间则开售抢购
-        if time.time()> timeStamp:
+        if time.time() > timeStamp:
             try:
                 print("尝试下单")
                 # 找到“立即购买”，点击
@@ -101,11 +101,11 @@ def buy(buy_time, mall):
 
 if __name__ == "__main__":
     # 输入要购买物品 url
-    url = "https://detail.tmall.com/item.htm?id=611491485585"
+    url = "https://detail.tmall.com/item.htm?spm=a220m.1000858.1000725.1.449d5ee8L0oNmL&id=15839960304&areaId=320500&standard=1&user_id=101450072&cat_id=2&is_b=1&rn=baf2eb3ad6e052562ab3c4728367cfd3"
     # 请选择商城（淘宝 1  天猫 2  输入数字：
     mall = '2'
     # 输入开售时间
-    bt = "2020-02-10 19:59:59"
+    bt = "2020-02-13 11:23:59"
     login(url, mall)
     buy(bt, mall)
     driver.quit()
