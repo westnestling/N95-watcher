@@ -70,7 +70,7 @@ def buy(buy_time, mall):
     while True:
         # 现在时间大于预设时间则开售抢购
         tmp_time = time.time()
-        if tmp_time >= timeStamp or (timeStamp - tmp_time) < 0.01:
+        if tmp_time >= timeStamp:
             try:
                 # 找到“立即购买”，点击
                 selector = driver.find_element_by_css_selector(btn_buy)
@@ -108,7 +108,8 @@ def buy(buy_time, mall):
 if __name__ == "__main__":
     # 输入要购买物品 url
     # url = "https://chaoshi.detail.tmall.com/item.htm?id=611911893371&sourceType=item&sourceType=item&price=126&suid=8d12be3f-0542-43be-a763-9822c43d5565&ut_sk=1.XbCIz/bFF4ADALGCBoZRXQj7_23181017_1581584224037.Copy.tm_detail&un=91e19e41e6228caa0a62cb2c046d31df&share_crt_v=1&spm=a2159r.13376460.0.0&sp_tk=77%20lNnA0YzFWM2FGWDfvv6U=&cpp=1&shareurl=true&short_name=h.VXpAOsV&sm=4a6d85&app=chrome"
-    url = "https://cart.tmall.com/cart.htm?from=bmini&tpId=725677994"
+    # 如果是天猫超市的抢购 请先加入购物车 此处为购物车链接
+    url = "https://cart.tmall.com/cart.htm?from=bmini&tpId=xxxxxxx"
     # 请选择商城（淘宝 1  天猫 2  3 天猫超市 输入数字：
     mall = '3'
     # 输入开售时间
