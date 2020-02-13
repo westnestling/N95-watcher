@@ -25,10 +25,10 @@ def check_shop(url, keywords):
         log.warning(url)
         log.warning(keywords)
         #     "发现口罩有货!!",
-        fo = open("data.txt", "r")
+        fo = open("../data.txt", "r")
         lines = fo.readlines()
         fo.close()
-        fo = open("data.txt", "w")
+        fo = open("../data.txt", "w")
         str_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime())
         lines.append(str_time+" "+browser.title+" url："+url+"\n")
         fo.writelines(lines)
