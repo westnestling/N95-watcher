@@ -11,9 +11,9 @@
 
 ### 如果对您有帮助 欢迎点亮 🌟star🌟
 # 加入已有推送群
-<img src="http://chuantu.xyz/t6/715/1581144544x1033347913.jpg" width="250" align=center>
+<img src="https://s2.ax1x.com/2020/02/14/1XV238.jpg" width="250" align=center>
 
-[群二维码不显示点击这里](http://chuantu.xyz/t6/715/1581144544x1033347913.jpg)
+[群二维码不显示点击这里](https://s2.ax1x.com/2020/02/14/1XV238.jpg)
 
 ## 加群失败 请关注以下二维码 获得最新消息
 <img src="http://chuantu.xyz/t6/715/1581144518x2728303411.jpg" width="250" align=center>
