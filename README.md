@@ -12,10 +12,10 @@
 
 
 ### 如果对您有帮助 欢迎点亮 🌟star🌟
-# 加入已有推送群
-<img src="https://s2.ax1x.com/2020/02/14/1XV238.jpg" width="250" align=center>
+# 加入已有交流群
+<img src="http://i2.tiimg.com/673525/362cd540e3ba52f5.jpg" width="250" align=center>
 
-[群二维码不显示点击这里](https://s2.ax1x.com/2020/02/14/1XV238.jpg)
+[群二维码不显示点击这里](http://i2.tiimg.com/673525/362cd540e3ba52f5.jpg)
 
 ## 加群失败 请关注以下二维码 获得最新消息
 <img src="http://chuantu.xyz/t6/715/1581144518x2728303411.jpg" width="250" align=center>
@@ -41,7 +41,7 @@ pip install pillow
 - 开始推送
 
 ## 天猫、淘宝抢购功能
-###使用方法
+### 使用方法
 1. 设置url
 2. 设置天猫还是淘宝
 3. 设置开抢时间
