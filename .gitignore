@@ -1,0 +1,8 @@
+
+.idea/*
+*.pyc
+imgs/*.png
+log/logs/*.txt
+src/imgs/*.png
+.DS_Store
+src/ghostdriver.log
