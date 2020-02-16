@@ -27,7 +27,7 @@
 [二维码不显示点击这里](http://chuantu.xyz/t6/715/1581144518x2728303411.jpg)
 
 
-## 自行推送使用方式
+## 自行微信推送使用方式
 - 请自行安装python 3，如果已安装版本是python 2，推荐使用版本管理工具。
 ```buildoutcfg
 python3：https://www.python.org/downloads/
@@ -39,12 +39,13 @@ pip install selenium
 pip install pillow
 如果还有其他缺失 请根据提示 pip install 安装
 ```
-- 运行src下的watcher.py
+- 运行watcher.py
 - 运行wechat_push.py
+- 修改程序内的要推送用户名
 - 扫码登陆
 - 开始推送
 
-## 天猫、淘宝抢购功能
+## 天猫、淘宝、天猫商城抢购功能
 ### 使用方法
 1. 设置url
 2. 设置天猫还是淘宝
@@ -65,3 +66,6 @@ pip install pillow
 
 
 ## 欢迎关注公众号：后端开发技术
+<img src="http://chuantu.xyz/t6/715/1581144518x2728303411.jpg" width="250" align=center>
+
+[二维码不显示点击这里](http://chuantu.xyz/t6/715/1581144518x2728303411.jpg)
