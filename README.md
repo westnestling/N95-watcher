@@ -22,9 +22,9 @@
 #### ！！！为防止人恶意刷单，京东扫码登陆功能已经删除，如有需要请加微信群获取
 
 ## 加群失败 请关注以下二维码 获得最新消息
-<img src="http://chuantu.xyz/t6/715/1581144518x2728303411.jpg" width="250" align=center>
+<img src="http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg" width="250" align=center>
 
-[二维码不显示点击这里](http://chuantu.xyz/t6/715/1581144518x2728303411.jpg)
+[二维码不显示点击这里](http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg)
 
 
 ## 自行微信推送使用方式
@@ -66,6 +66,6 @@ pip install pillow
 
 
 ## 欢迎关注公众号：后端开发技术
-<img src="http://chuantu.xyz/t6/715/1581144518x2728303411.jpg" width="250" align=center>
+<img src="http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg" width="250" align=center>
 
-[二维码不显示点击这里](http://chuantu.xyz/t6/715/1581144518x2728303411.jpg)
+[二维码不显示点击这里](http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg)
