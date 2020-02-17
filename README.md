@@ -60,7 +60,7 @@ pip install pillow
 
 如果是windows系统，需要修改代码中 “chromedriver” 为 “chromedriver.exe”
 
-7. 等待自动下单
+
 
 ## 京东监控扫码一键登陆功能
 ### 使用方法
