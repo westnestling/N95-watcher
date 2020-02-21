@@ -19,9 +19,9 @@
 
 ### 如果对您有帮助 欢迎点亮 🌟star🌟
 # 加入已有交流群
-<img src="http://i2.tiimg.com/673525/362cd540e3ba52f5.jpg" width="250" align=center>
+<img src="http://i2.tiimg.com/673525/38bd161634de100b.jpg" width="250" align=center>
 
-[群二维码不显示点击这里](http://i2.tiimg.com/673525/362cd540e3ba52f5.jpg)
+[群二维码不显示点击这里](http://i2.tiimg.com/673525/38bd161634de100b.jpg)
 #### ！！！为防止人恶意刷单，京东扫码登陆功能已经删除，如有需要请加微信群获取
 
 ## 加群失败 请关注以下二维码 获得最新消息
