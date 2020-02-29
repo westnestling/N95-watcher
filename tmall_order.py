@@ -4,6 +4,7 @@
 import os
 from selenium import webdriver
 import datetime
+import requests
 import time
 from selenium.webdriver.chrome.options import Options
 
@@ -41,7 +42,7 @@ def login(url, mall):
     time.sleep(30)
 
 
-def buy(buy_time, mall):
+def buy(buy_time, mall,time_dif):
     '''
     购买函数
 
@@ -96,6 +97,21 @@ def buy(buy_time, mall):
             time.sleep(0.01)
 
 
+def get_server_time():
+    time_start = time.time()
+    r1 = requests.get(url='http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp',
+                      headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36'})
+    x = eval(r1.text)
+    tmp = time.time()-time_start
+    timeNum = int(x['data']['t'])
+
+    timeStamp = float(timeNum/1000)
+    print(tmp)
+    # timeArray = time.localtime(timeStamp)
+    # otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
+    return timeStamp,tmp
+
+
 # 使用方法
 # 1 设置url
 # 2 设置天猫还是淘宝
@@ -104,6 +120,11 @@ def buy(buy_time, mall):
 # 5 扫码登录
 # 6 选中要购买商品以及相应种类等（必须选中！！！）
 # 7 自动下单
+#
+# if __name__ == '__main__':
+#     # time.time()
+#     print(time.time() )
+#     print(time.time()*1000 - 1582974139543.0)
 
 if __name__ == "__main__":
     # 输入要购买物品 url
@@ -114,6 +135,9 @@ if __name__ == "__main__":
     mall = '3'
     # 输入开售时间
     bt = "2020-02-13 00:00:00"
+    server_time,tmp = get_server_time()
+    time_dif = time.time() - server_time + tmp
+    print(time_dif)
     login(url, mall)
-    buy(bt, mall)
+    buy(bt, mall,time_dif)
     # driver.quit()
