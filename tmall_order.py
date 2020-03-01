@@ -3,7 +3,6 @@
 # 天猫淘宝自动下单 用于定时抢购
 import os
 from selenium import webdriver
-import datetime
 import requests
 import time
 from selenium.webdriver.chrome.options import Options
@@ -18,6 +17,7 @@ driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__) + "/src", "chro
                           chrome_options=chrome_options)
 # 窗口最大化显示
 driver.maximize_window()
+
 
 
 def login(url, mall):
@@ -42,7 +42,7 @@ def login(url, mall):
     time.sleep(30)
 
 
-def buy(buy_time, mall,time_dif):
+def buy(buy_time, mall, time_dif):
     '''
     购买函数
 
@@ -65,20 +65,19 @@ def buy(buy_time, mall,time_dif):
     timeArray = time.strptime(buy_time, "%Y-%m-%d %H:%M:%S")
     # 转为时间戳
     timeStamp = int(time.mktime(timeArray))
-    print(timeStamp)
-    print(time.time())
+    print("开始准备购买")
 
     while True:
         # 现在时间大于预设时间则开售抢购
         tmp_time = time.time()
-        if tmp_time >= timeStamp:
+        if tmp_time >= (timeStamp - time_dif):
             try:
+                print("开始购买" + str(time.time()))
                 # 找到“立即购买”，点击
-                selector = driver.find_element_by_css_selector(btn_buy)
                 if selector:
+                    print("点击" + str(time.time()))
                     selector.click()
                     break
-                # time.sleep(0.1)
             except:
                 pass
     while True:
@@ -87,9 +86,10 @@ def buy(buy_time, mall,time_dif):
             # print("尝试提交订单")
             order_selector = driver.find_elements_by_css_selector(btn_order)
             if order_selector:
+                print("购买" + str(time.time()))
                 order_selector[-1].click()
                 # 下单成功，跳转至支付页面
-                print("购买成功")
+                print("购买成功" + str(time.time() - tmp_time))
                 break
             driver.refresh()
         except:
@@ -100,16 +100,17 @@ def buy(buy_time, mall,time_dif):
 def get_server_time():
     time_start = time.time()
     r1 = requests.get(url='http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp',
-                      headers={'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36'})
+                      headers={
+                          'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 UBrowser/6.2.4098.3 Safari/537.36'})
     x = eval(r1.text)
-    tmp = time.time()-time_start
+    tmp = time.time() - time_start
     timeNum = int(x['data']['t'])
 
-    timeStamp = float(timeNum/1000)
+    timeStamp = float(timeNum / 1000)
     print(tmp)
     # timeArray = time.localtime(timeStamp)
     # otherStyleTime = time.strftime("%Y-%m-%d %H:%M:%S", timeArray)
-    return timeStamp,tmp
+    return timeStamp, tmp
 
 
 # 使用方法
@@ -121,23 +122,17 @@ def get_server_time():
 # 6 选中要购买商品以及相应种类等（必须选中！！！）
 # 7 自动下单
 #
-# if __name__ == '__main__':
-#     # time.time()
-#     print(time.time() )
-#     print(time.time()*1000 - 1582974139543.0)
 
 if __name__ == "__main__":
     # 输入要购买物品 url
-    # url = "https://chaoshi.detail.tmall.com/item.htm?id=611911893371&sourceType=item&sourceType=item&price=126&suid=8d12be3f-0542-43be-a763-9822c43d5565&ut_sk=1.XbCIz/bFF4ADALGCBoZRXQj7_23181017_1581584224037.Copy.tm_detail&un=91e19e41e6228caa0a62cb2c046d31df&share_crt_v=1&spm=a2159r.13376460.0.0&sp_tk=77%20lNnA0YzFWM2FGWDfvv6U=&cpp=1&shareurl=true&short_name=h.VXpAOsV&sm=4a6d85&app=chrome"
     # 如果是天猫超市的抢购 请先加入购物车 此处为购物车链接
-    url = "https://cart.tmall.com/cart.htm?from=bmini&tpId=xxxxxxx"
-    # 请选择商城（淘宝 1  天猫 2  3 天猫超市 输入数字：
+    url = "https://cart.taobao.com/cart.htm"
+    # 请选择商城（淘宝 1  天猫 2  3 通过购物车 输入数字：
     mall = '3'
     # 输入开售时间
-    bt = "2020-02-13 00:00:00"
-    server_time,tmp = get_server_time()
-    time_dif = time.time() - server_time + tmp
-    print(time_dif)
+    bt = "2020-03-01 15:00:00"
+    server_time, tmp = get_server_time()
+    time_dif = time.time() - server_time + tmp + tmp
     login(url, mall)
-    buy(bt, mall,time_dif)
+    buy(bt, mall, 2 * time_dif + 0.5)
     # driver.quit()
