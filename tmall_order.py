@@ -2,6 +2,7 @@
 # coding:utf-8
 # 天猫淘宝自动下单 用于定时抢购
 import os
+import sys
 from selenium import webdriver
 import requests
 import time
@@ -13,8 +14,13 @@ chrome_options = Options()
 chrome_options.add_argument("disable-infobars")
 # 允许浏览器重定向，Framebusting requires same-origin or a user gesture
 chrome_options.add_argument("disable-web-security")
-driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__) + "/src", "chromedriver"),
-                          chrome_options=chrome_options)
+
+if sys.platform == "win32":
+    driver = webdriver.Chrome(os.path.join(os.path.abspath(os.path.dirname(__file__)) + "\\src", "chromedriver.exe"),
+                              chrome_options=chrome_options)
+else:
+    driver = webdriver.Chrome(os.path.join(os.path.dirname(__file__) + "/src", "chromedriver"),
+                              chrome_options=chrome_options)
 # 窗口最大化显示
 driver.maximize_window()
 
