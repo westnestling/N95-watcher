@@ -20,9 +20,9 @@
 ### 如果对您有帮助 欢迎点亮 🌟star🌟
 ## 现已停止维护，但依旧可以加入微信群相互交流信息
 ## 如果加群失败 请关注以下二维码 回复“加群”获得最新学习群二维码
-<img src="http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg" width="250" align=center>
+<img src="http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg" width="250" align=center>
 回复“加群”
-[二维码不显示点击这里](http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg)
+[二维码不显示点击这里](http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg)
 
 
 ## 自行微信推送使用方式
@@ -67,6 +67,6 @@ pip install pillow
 
 
 ## 欢迎关注公众号：后端开发技术
-<img src="http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg" width="250" align=center>
+<img src="http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg" width="250" align=center>
 
-[二维码不显示点击这里](http://i1.fuimg.com/673525/dfd81d232e0ff949.jpg)
+[二维码不显示点击这里](http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg)
