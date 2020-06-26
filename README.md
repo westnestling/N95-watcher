@@ -8,17 +8,11 @@
 - 根据已有接口查询商品并检查，然后推送
 - 发现需要抢购的商品，输入url自动下单抢购（支持天猫淘宝）tmall_order.py 
 - 京东监控扫码一键登陆功能 jd_auto_order.py
-程序运行效果截图
-<img src="http://i1.fuimg.com/673525/70a1e32512ff0875.jpg" width="250" align=center>
-[截图不显示点击这里](http://i1.fuimg.com/673525/70a1e32512ff0875.jpg)
-<img src="http://i1.fuimg.com/673525/14707fe5414940b5.jpg" width="250" align=center>
-[截图不显示点击这里](http://i1.fuimg.com/673525/14707fe5414940b5.jpg)
-<img src="http://i1.fuimg.com/673525/399b61427ad9bef4.jpg" width="250" align=center>
-[截图不显示点击这里](http://i1.fuimg.com/673525/399b61427ad9bef4.jpg)
 
 
 ### 如果对您有帮助 欢迎点亮 🌟star🌟
 ## 现已停止维护，但依旧可以加入微信群相互交流信息
+## 欢迎关注公众号：后端开发技术
 ## 如果加群失败 请关注以下二维码 回复“加群”获得最新学习群二维码
 <img src="http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg" width="250" align=center>
 回复“加群”
