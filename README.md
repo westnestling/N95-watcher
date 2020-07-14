@@ -12,11 +12,6 @@
 
 ### 如果对您有帮助 欢迎点亮 🌟star🌟
 ## 现已停止维护，但依旧可以加入微信群相互交流信息
-## 欢迎关注公众号：后端开发技术
-## 如果加群失败 请关注以下二维码 回复“加群”获得最新学习群二维码
-<img src="http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg" width="250" align=center>
-回复“加群”
-[二维码不显示点击这里](http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg)
 
 
 ## 自行微信推送使用方式
@@ -58,9 +53,3 @@ pip install pillow
 3. 设置支付密码 payment_pwd
 4. 启动程序,扫码登录京东，程序即可自动运行
 #### ！！！注意，需要设置默认收货地址，订单地址即为默认收货地址，查询有货也是以此地址监测。
-
-
-## 欢迎关注公众号：后端开发技术
-<img src="http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg" width="250" align=center>
-
-[二维码不显示点击这里](http://cleverdz.top/ttrx_api/qrcode_for_gh_51b7f296a992_344.jpg)
